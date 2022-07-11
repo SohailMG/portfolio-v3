@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Code:wght@300&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .nav-item{
+        @apply md:text-[14px] text-4xl
+    }
+    .opened-menu{
+        @apply translate-x-0 transition-all transform duration-150 ease-in-out
+    }
+    .closed-menu{
+        @apply translate-x-full transition-all transform duration-150 ease-in-out
+    }
+    .move-anim{
+        @apply absolute top-0 left-0 transition-all transform duration-150 ease-linear
+    }
+}
+
+html{
+    scroll-behavior:smooth;
+}
+html::-webkit-scrollbar {
+    width: 0px;
+    /* For Chrome, Safari, and Opera */
+}
+.topic::before{
+    content:'#';
+    color: #c0c0c0;
+}
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+}
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#64FFDA, #64FFDA)
+}
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
+}
+
+.section-heading::before{
+    content:"<"
+}
+.section-heading::after{
+    content:"/>"
+}
+
+.skills-list li::before{
+    content:"▹";
+    margin-right:0.6rem;
+    color: #64FFDA;
+}
+.project-heading::before{
+    content:"▹";
+    margin-right:0.6rem;
+    color: #64FFDA;
+
+}
+.nav-item{
+    color:#8892B0;
+}
+.active{
+    color:#64FFDA;
+}
+
+#logo-icon{
+    animation: move 3s forwards;
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes move {
+    0% {
+        top: 50%;
+        left:50%;
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        left: 2%;
+        top: 2%;
+        width: 42px;
+        height: 42px;
+        transform: translate(0, 0);
+    }
+}
