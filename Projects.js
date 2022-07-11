@@ -1,6 +1,6 @@
 module.exports.projectsList = [
   {
-    id: 10,
+    id: 101,
     featured: true,
     name: "Skanr",
     description:
@@ -16,13 +16,14 @@ module.exports.projectsList = [
       { name: "Firebase" },
       { name: "Jest" },
     ],
-    livesite: "https://expo.dev/@sohailgsais/skanr-app",
+    livesite: "/videos/skanr-demo.MOV",
+    ytid: "dJHyjwu9tGY",
     demo: false,
     githubRepo: "https://github.com/SohailMG/skanr",
     image: "/images/skanrApp.png",
   },
   {
-    id: 12,
+    id: 102,
     featured: true,
     name: "Covid Trakr",
     description:
@@ -44,7 +45,7 @@ module.exports.projectsList = [
     image: "/images/covid-trakr.png",
   },
   {
-    id: 4,
+    id: 103,
     featured: true,
     name: "Price Finder",
     description:
@@ -63,11 +64,12 @@ module.exports.projectsList = [
     ],
     livesite: false,
     demo: "/videos/priceFinderDemo.mp4",
+    ytid: "BUje2pjdMTQ",
     githubRepo: "https://github.com/SohailMG/price-finder",
     image: "/images/priceFinder.png",
   },
   {
-    id: 1,
+    id: 104,
     name: "Uber Clone",
     description:
       "An Uber app clone using expo , react native with Redux and tailwindcss, Google cloud services are also used for map and directions",
@@ -83,7 +85,7 @@ module.exports.projectsList = [
     image: "/images/UberClone.png",
   },
   {
-    id: 2,
+    id: 105,
     name: "Amazon Clone",
     description:
       "Full stack amazon clone using nextjs for server side rendering of products,orders and basket items, tailwindcss for responsive design, redux for shopping basket functionality, NextAuth authentication with google and stripe for payment and webhooks",
@@ -102,7 +104,7 @@ module.exports.projectsList = [
     image: "/images/AmazonClone.png",
   },
   {
-    id: 3,
+    id: 106,
     featured: true,
     name: "Path Finder",
     description:
@@ -116,5 +118,70 @@ module.exports.projectsList = [
     demo: false,
     githubRepo: "https://github.com/SohailMG/bfs-visualiser",
     image: "/images/PathFinder.png",
+  },
+  {
+    id: 107,
+    name: "Linkedin Clone",
+    description:
+      "Linkedin Clone using ReactJS,Redux,TailwindCss and Firebase for authentication and data storage",
+    techStack: [
+      { name: "Reactjs" },
+      { name: "Redux" },
+      { name: "Firebase" },
+      { name: "Tailwindcss" },
+    ],
+    livesite: "https://linkedin-clone-f6371.web.app/",
+    demo: false,
+    githubRepo: "https://github.com/SohailMG/linkedin-clone",
+    image: "/images/LinkedinClone.png",
+  },
+  {
+    id: 108,
+    name: "AirBnb Clone",
+    description: "AirBnb Clone ",
+    techStack: [
+      { name: "Reactjs" },
+      { name: "Nextjs" },
+      { name: "Redux" },
+      { name: "Tailwindcss" },
+      { name: "Mapbox" },
+      { name: "Vercel" },
+    ],
+    livesite: "http://airbnb-clone-sohailmg.vercel.app/",
+    demo: false,
+    githubRepo: "https://github.com/SohailMG/airbnb-clone",
+    image: "/images/AirbnbClone.png",
+  },
+  {
+    id: 109,
+    name: "Library Management System",
+    description:
+      "Using C++ to implement a library management system that allows users to search for books using the book title. The system implements from scratch a HashTable with optional chaining for collusion resolution using linked-lists",
+    techStack: [
+      { name: "C++" },
+      { name: "MakeFiles" },
+      { name: "Catch2 Testing" },
+    ],
+    livesite: false,
+    demo: "/videos/LibraryManagementSystem.mp4",
+    githubRepo: "https://github.com/SohailMG/LibraryManagmentSystem",
+    image: "/images/LibraryManagementSystem.png",
+  },
+  {
+    id: 110,
+    name: "Simple After School App",
+    description:
+      "A Progressive Web App to purchase after school lessons implemented using Vuejs,TailwindCss and MongoDb for data storage.",
+    techStack: [
+      { name: "Vuejs" },
+      { name: "TailwindCss" },
+      { name: "MongoDb" },
+      { name: "PWA" },
+      { name: "Github Pages" },
+    ],
+    livesite: "https://sohailmg.github.io/afterschool-app/",
+    demo: false,
+    githubRepo: "https://github.com/SohailMG/afterschool-app",
+    image: "/images/AfterSchool.png",
   },
 ];

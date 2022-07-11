@@ -14,11 +14,16 @@ const Home: NextPage = () => {
   // show initial loading screen
   const [loading, setLoading] = React.useState(true);
 
-  React.useLayoutEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
+  React.useEffect(() => {
+    const logoIcon = document.getElementById("logoIcon");
+    if (logoIcon) {
+      logoIcon.addEventListener("animationend", () => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
+      });
+    }
+  });
 
   if (loading) {
     return (
@@ -27,7 +32,13 @@ const Home: NextPage = () => {
           <title>Sohail Gsais</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <LoadingScreen />
+        <div className="logo-container animate__animated animate__bounceOut animate__delay-2s">
+          <div className="square square-one face-top"></div>
+          <div className="square square-two face-top"></div>
+          <div className="square square-three face-top"></div>
+          <div className="square square-four side"></div>
+          <div id="logoIcon" className="square square-five side-2"></div>
+        </div>
       </div>
     );
   }

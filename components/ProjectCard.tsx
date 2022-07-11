@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Globe, GitHub, Youtube } from "react-feather";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -18,6 +19,7 @@ const listItem = {
 };
 function ProjectCard({ project, idx }: any) {
   const ref = React.useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   // check if div is hoverd
   const [hover, setHover] = React.useState(false);
@@ -53,6 +55,7 @@ function ProjectCard({ project, idx }: any) {
       key={idx}
       variants={listItem}
       ref={ref}
+      onClick={() => router.push("/project", { query: { pid: project.id } })}
       className={`project-card bg-[#112240] w-full h-72 md:h-80 p-4 rounded-md shadow-md cursor-pointer  hover:scale-105 hover:shadow-xl transition-all transform duration-150 ease-in-out`}
     >
       <div className="flex flex-col spacce-y-4">
@@ -63,13 +66,28 @@ function ProjectCard({ project, idx }: any) {
               color="#64FFDA"
               aria-label="live site"
               className="animate-pulse"
+              onClick={() => {
+                window.open(project.livesite, "_blank");
+              }}
             />
           )}
           {project.githubRepo && (
-            <GitHub size="20" color="#64FFDA" aria-label="code" />
+            <GitHub
+              onClick={() => window.open(project.githubRepo)}
+              size="20"
+              color="#64FFDA"
+              aria-label="code"
+            />
           )}
           {project.demo && (
-            <Youtube size="20" color="#64FFDA" aria-label="demo" />
+            <Youtube
+              onClick={() =>
+                window.open("https://www.youtube.com/watch?v=" + project.demo)
+              }
+              size="20"
+              color="#64FFDA"
+              aria-label="demo"
+            />
           )}
         </div>
         <h1

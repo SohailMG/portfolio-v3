@@ -1,13 +1,16 @@
 import React from "react";
 import { ExternalLink, GitHub, Youtube } from "react-feather";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { useRouter } from "next/router";
 function LargeCard({ project, index }: any) {
+  const router = useRouter();
   // check if element is being hovered
   const [hovered, setHovered] = React.useState(false);
 
   return (
     <AnimationOnScroll animateIn={"animate__fadeIn"}>
       <div
+        onClick={() => router.push("/project", { query: { pid: project.id } })}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className={`flex cursor-pointer  ${index % 2 && "flex-row-reverse"}`}

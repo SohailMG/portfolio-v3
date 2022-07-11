@@ -1,10 +1,16 @@
 import React from "react";
 import { GitHub, ExternalLink, Youtube } from "react-feather";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { useRouter } from "next/router";
 function FeaturedCard({ project }: any) {
+  const router = useRouter();
+
   return (
     <AnimationOnScroll animateIn="Animate__fadeInUp">
-      <div className="bg-[#0D2133]  rounded-lg top-[50%] translate-y-1/2 md:translate-y-0 relative shadow-md m-4 z-0 ">
+      <div
+        onClick={() => router.push("/project", { query: { pid: project.id } })}
+        className="bg-[#0D2133]  rounded-lg top-[50%] translate-y-1/2 md:translate-y-0 relative shadow-md m-4 z-0 "
+      >
         <img
           src={project.image}
           alt="airbnb"
@@ -12,6 +18,7 @@ function FeaturedCard({ project }: any) {
         />
         <div className="p-6 z-10 bg-[#0D2133]  ">
           <h1
+            onClick={() => console.log("pressed")}
             style={{
               color: "white",
               fontFamily: "Poppins",
