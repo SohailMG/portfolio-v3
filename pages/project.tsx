@@ -31,14 +31,14 @@ function project() {
               color: "#CCD6F6",
               fontFamily: "Poppins",
             }}
-            className="mt-2 font-bold text-lg md:text-2xl z-10 "
+            className="mt-2 font-bold text-lg md:text-2xl z-10   animate__animated animate__zoomIn"
           >
             {projectDetails.name}
           </h1>
-          <p className="text-[#A8B2D1] leading-loose font-light  text-center">
+          <p className="text-[#A8B2D1] leading-loose font-light  text-center  animate__animated animate__zoomIn">
             {projectDetails.description}
           </p>
-          <div className="laptop">
+          <div className="laptop  animate__animated animate__fadeInUp">
             <img src="/images/laptop.png" alt="" />
             <iframe
               src={"https://www.youtube.com/embed/" + projectDetails.ytid}

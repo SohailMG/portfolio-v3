@@ -9,6 +9,7 @@ import ProjectsSection from "../sections/ProjectsSection";
 import WorkSection from "../sections/WorkSection";
 import LoadingScreen from "../sections/LoadingScreen";
 import Socials from "../components/Socials";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   // show initial loading screen
@@ -30,7 +31,28 @@ const Home: NextPage = () => {
       <div className="flex bg-[#0A192E] min-h-screen items-center justify-center">
         <Head>
           <title>Sohail Gsais</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="shortcut icon"
+            href="/images/favicon.ico"
+            type="image/x-icon"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"
+          />
         </Head>
         <div className="logo-container animate__animated animate__bounceOut animate__delay-2s">
           <div className="square square-one face-top"></div>
@@ -47,7 +69,7 @@ const Home: NextPage = () => {
     <div className="flex bg-[#0A192E] min-h-screen flex-col py-2">
       <Head>
         <title>Sohail Gsais</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
         <script src="https://unpkg.com/feather-icons"></script>
       </Head>
       <LandingSection />
@@ -58,6 +80,7 @@ const Home: NextPage = () => {
         <ContactSection />
       </main>
       <Socials />
+      <Footer />
     </div>
   );
 };
