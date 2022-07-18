@@ -50,6 +50,10 @@ const Home: NextPage = () => {
       <div className="flex bg-[#0A192E] min-h-screen items-center justify-center">
         <Head>
           <title>Sohail Gsais</title>
+          <meta
+            name="description"
+            content="Recent Computer Science graduate with a solid academic background in software engineering, object-oriented development, and web related technologies. Extremely proficient in JavaScript, Java, and frameworks like React, Nextjs and Vue.Seeking to leverage solid programming skills and continue to explore the inspiring, innovative field of Software Development"
+          />
           <link
             rel="shortcut icon"
             href="/images/favicon.ico"
@@ -89,6 +93,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Sohail Gsais</title>
         <link rel="icon" href="/images/favicon.ico" />
+        <meta
+          name="description"
+          content="Recent Computer Science graduate with a solid academic background in software engineering, object-oriented development, and web related technologies. Extremely proficient in JavaScript, Java, and frameworks like React, Nextjs and Vue.Seeking to leverage solid programming skills and continue to explore the inspiring, innovative field of Software Development"
+        />
         <script src="https://unpkg.com/feather-icons"></script>
       </Head>
       <LandingSection />
