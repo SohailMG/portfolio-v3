@@ -3,20 +3,7 @@ import { Globe, GitHub, Youtube } from "react-feather";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
-};
 
-const listItem = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
 function ProjectCard({ project, idx }: any) {
   const ref = React.useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -51,12 +38,15 @@ function ProjectCard({ project, idx }: any) {
   }, []);
 
   return (
-    <motion.div
+    <div
       key={idx}
-      variants={listItem}
       ref={ref}
-      onClick={() => router.push("/project", { query: { pid: project.id } })}
-      className={`project-card bg-[#112240] w-full h-72 md:h-80 p-4 rounded-md shadow-md cursor-pointer  hover:scale-105 hover:shadow-xl transition-all transform duration-150 ease-in-out`}
+      onClick={() => {
+        if (project.ytid || project.demo) {
+          router.push("project", { query: { pid: project.id } });
+        }
+      }}
+      className={`project-card  bg-[#112240] w-full h-72 md:h-80 p-4 rounded-md shadow-md cursor-pointer  hover:-mt-6 transition-all transform duration-150 ease-in-out`}
     >
       <div className="flex flex-col spacce-y-4">
         <div className="flex items-center space-x-4">
@@ -113,7 +103,7 @@ function ProjectCard({ project, idx }: any) {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

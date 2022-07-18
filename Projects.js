@@ -138,7 +138,8 @@ module.exports.projectsList = [
   {
     id: 108,
     name: "AirBnb Clone",
-    description: "AirBnb Clone ",
+    description:
+      "AirBnb Clone using Nextjs for server-side rendering, TailwindCss for responsive design, and Mapbox API",
     techStack: [
       { name: "Reactjs" },
       { name: "Nextjs" },
@@ -179,7 +180,7 @@ module.exports.projectsList = [
       { name: "PWA" },
       { name: "Github Pages" },
     ],
-    livesite: "https://sohailmg.github.io/afterschool-app/",
+    livesite: "https://afterschool-app.vercel.app/",
     demo: false,
     githubRepo: "https://github.com/SohailMG/afterschool-app",
     image: "/images/AfterSchool.png",

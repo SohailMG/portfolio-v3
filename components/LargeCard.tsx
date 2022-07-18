@@ -10,10 +10,16 @@ function LargeCard({ project, index }: any) {
   return (
     <AnimationOnScroll animateIn={"animate__fadeIn"}>
       <div
-        onClick={() => router.push("/project", { query: { pid: project.id } })}
+        onClick={() => {
+          if (project.ytid || project.demo) {
+            router.push("project", { query: { pid: project.id } });
+          }
+        }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className={`flex cursor-pointer  ${index % 2 && "flex-row-reverse"}`}
+        className={`flex cursor-pointer hover:-mt-6 transition-all transform duration-150 ease-in-out p-4  ${
+          index % 2 && "flex-row-reverse"
+        }`}
       >
         <img
           src={project.image}
@@ -37,13 +43,17 @@ function LargeCard({ project, index }: any) {
               index % 2 ? "-mr-44" : "-ml-44"
             } shadow-xl rounded-xl text-[#A8B2D1] `}
           >
-            {project.description.slice(0, 200)}...
-            <span
-              onClick={() => console.log("clicked")}
-              className={`text-[#64FFDA] text-[15px] link link-underline link-underline-black`}
-            >
-              read more
-            </span>{" "}
+            {project.description.length > 200 &&
+              project.description.slice(0, 200) + "..."}
+            {project.description.length > 200 && (
+              <span
+                onClick={() => console.log("clicked")}
+                className={`text-[#64FFDA] text-[15px] link link-underline link-underline-black`}
+              >
+                read more
+              </span>
+            )}
+            {project.description.length < 200 && project.description}
           </p>
 
           <div className="flex gap-2 flex-wrap">

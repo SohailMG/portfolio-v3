@@ -38,6 +38,13 @@ function project() {
           <p className="text-[#A8B2D1] leading-loose font-light  text-center  animate__animated animate__zoomIn">
             {projectDetails.description}
           </p>
+          <div className="flex items-center flex-wrap">
+            {projectDetails.techStack.map((tech: any) => {
+              <span className="text-[#8892B0] text-sm font-light mt-2">
+                {tech.name}
+              </span>;
+            })}
+          </div>
           <div className="laptop  animate__animated animate__fadeInUp">
             <img src="/images/laptop.png" alt="" />
             <iframe

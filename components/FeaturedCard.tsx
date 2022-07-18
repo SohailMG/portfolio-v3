@@ -8,7 +8,11 @@ function FeaturedCard({ project }: any) {
   return (
     <AnimationOnScroll animateIn="Animate__fadeInUp">
       <div
-        onClick={() => router.push("/project", { query: { pid: project.id } })}
+        onClick={() => {
+          if (project.ytid || project.demo) {
+            router.push("project", { query: { pid: project.id } });
+          }
+        }}
         className="bg-[#0D2133]  rounded-lg top-[50%] translate-y-1/2 md:translate-y-0 relative shadow-md m-4 z-0 "
       >
         <img

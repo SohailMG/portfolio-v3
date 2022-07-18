@@ -10,6 +10,7 @@ import WorkSection from "../sections/WorkSection";
 import LoadingScreen from "../sections/LoadingScreen";
 import Socials from "../components/Socials";
 import Footer from "../components/Footer";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   // show initial loading screen
@@ -17,14 +18,32 @@ const Home: NextPage = () => {
 
   React.useEffect(() => {
     const logoIcon = document.getElementById("logoIcon");
-    if (logoIcon) {
+    const initLoadingDone = localStorage.getItem("initialLoadingDone");
+    if (initLoadingDone) setLoading(false);
+    else if (logoIcon) {
       logoIcon.addEventListener("animationend", () => {
         setTimeout(() => {
           setLoading(false);
+          localStorage.setItem("initialLoadingDone", "true");
         }, 500);
       });
     }
   });
+
+  // check if tab is closed
+  React.useEffect(() => {
+    window.addEventListener("beforeunload", () => {
+      localStorage.removeItem("initialLoadingDone");
+    });
+    window.addEventListener("unload", () => {
+      localStorage.removeItem("initialLoadingDone");
+    });
+
+    return () => {
+      window.removeEventListener("beforeunload", () => {});
+      window.removeEventListener("unload", () => {});
+    };
+  }, []);
 
   if (loading) {
     return (
